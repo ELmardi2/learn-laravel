@@ -25,7 +25,7 @@ Route::get('/articles', function () {
     return view('articles');
 });
 Route::get('/contact', function () {
-    return view('Contact');
+    return view('contact');
 });
 Route::get('/signup', function () {
     return view('signup');
