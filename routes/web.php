@@ -33,3 +33,5 @@ Route::get('/signup', function () {
 Route::get('/signin', function () {
     return view('signin');
 });
+
+Route::post('/contact/submit', 'MsgsController@submit');

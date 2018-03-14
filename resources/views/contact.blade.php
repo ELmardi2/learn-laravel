@@ -3,18 +3,21 @@
 
 @section('content')
 <h1>Contact</h1>
-{!! Form::open(['https://mail.google.com/mail/u/1' => 'contact/send']) !!}
+{!! Form::open(['url' => 'contact/submit']) !!}
 <div class="form-group">
-  {{Form::label('name', 'Name', ['class' => 'form-control'])}}
-  {{Form::text('name', 'enter your name', ['class' => 'form-control'])}}
+  {{Form::label('name', 'Name')}}
+  {{Form::text('name', '', ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
   {{Form::label('email', 'E-Mail')}}
-  {{Form::text('example@mail.com', 'enter your E-mail', ['class' => 'form-control'])}}
+  {{Form::email('email', '', ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-  {{Form::label('email', 'Message', ['class' => 'form-control'])}}
-  {{Form::textarea('text', 'your msg here!', ['class' => 'form-control'])}}
+  {{Form::label('msg', 'Message' )}}
+  {{Form::textarea('msg', '', ['class' => 'form-control'])}}
+</div>
+<div >
+  {{form::submit('submit', ['class' =>'btn btn-primary'])}}
 </div>
 {!! Form::close() !!}
 @endsection
