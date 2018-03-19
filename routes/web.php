@@ -11,27 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/histories', function () {
-    return view('histories');
-});
-Route::get('/articles', function () {
-    return view('articles');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/signup', function () {
-    return view('signup');
-});
-Route::get('/signin', function () {
-    return view('signin');
-});
-
+Route::get('/', 'PagesController@getHome');
+Route::get('/about', 'PagesController@getAbout');
+Route::get('/histories', 'PagesController@getHistories');
+Route::get('/articles', 'PagesController@getArticles');
+Route::get('/contact', 'PagesController@getContact');
+Route::get('/signin', 'PagesController@getSignIn');
+Route::get('/signup', 'PagesController@getSignUp');
+Route::get('/messages', 'MsgsController@GetMsgs');
 Route::post('/contact/submit', 'MsgsController@submit');
